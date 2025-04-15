@@ -1,0 +1,22 @@
+image:
+  repository: carbon5k/a.panfilov
+  tag: latest
+  pullPolicy: Always
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 384Mi
+  requests:
+    cpu: 250m
+    memory: 192Mi
+
+service:
+  type: ClusterIP
+  port: 8000
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  path: /
+  pathType: Prefix
