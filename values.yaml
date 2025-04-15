@@ -1,3 +1,6 @@
+app:
+  name: "currency-app"  
+
 image:
   repository: carbon5k/a.panfilov
   tag: latest
