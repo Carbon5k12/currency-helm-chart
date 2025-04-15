@@ -1,25 +1,25 @@
-app:
-  name: "currency-app"  
-
-image:
-  repository: carbon5k/a.panfilov
-  tag: latest
-  pullPolicy: Always
-
-resources:
-  limits:
-    cpu: 500m
-    memory: 384Mi
-  requests:
-    cpu: 250m
-    memory: 192Mi
-
 service:
+  name: currency-service
   type: ClusterIP
   port: 8000
-  targetPort: 8080
+
+app:
+  name: test-release
+  image:
+    repository: carbon5k/a.panfilov
+    tag: ${BUILD_NUMBER}
+    pullPolicy: Always
+  resources:
+    limits:
+      cpu: 500m
+      memory: 384Mi
+    requests:
+      cpu: 250m
+      memory: 192Mi
 
 ingress:
   enabled: true
+  name: currency-ingress
+  annotations: {}
   path: /
   pathType: Prefix
