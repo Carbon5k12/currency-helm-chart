@@ -4,10 +4,10 @@ service:
   port: 8000
 
 app:
-  name: test-release
+  name: "test-release"
   image:
     repository: carbon5k/a.panfilov
-    tag: "${BUILD_NUMBER}"
+    tag: "latest"
     pullPolicy: Always
   resources:
     limits:
